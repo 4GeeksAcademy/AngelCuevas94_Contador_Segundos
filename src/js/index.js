@@ -8,6 +8,22 @@ import "../styles/index.css";
 //import your own components
 import Home from "./component/home.jsx";
 
+let segundos = 0
+
+
+setInterval(()=>{
+
+    ReactDOM.createRoot(document.getElementById('app')).render(<Home contador={segundos}/>);
+    
+    segundos ++
+
+    (segundos == 60 ? segundos=0 : segundos );
+
+    
+
+},1000)
+
+
 //render your react application
-ReactDOM.createRoot(document.getElementById('app')).render(<Home/>);
+ReactDOM.createRoot(document.getElementById('app')).render(<Home contador={segundos}/>);
 
