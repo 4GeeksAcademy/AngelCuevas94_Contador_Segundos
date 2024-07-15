@@ -9,36 +9,24 @@ import "../styles/index.css";
 import Home from "./component/home.jsx";
 
 let decimasdesegundo = 0
-let segundos = 50
+let segundos = 0
 let minutos = 0
 let horas = 0
 
-
-//decimas de segundo
-// setInterval(()=>{
-
-//     ReactDOM.createRoot(document.getElementById('app')).render(<Home decimasdesegundo={decimasdesegundo} segundos={segundos} minutos={minutos} horas={horas}/>);
-    
-//     decimasdesegundo ++
-
-//     (decimasdesegundo == 99 ? decimasdesegundo=0 : decimasdesegundo );
-   
-// }, 10)
-//segundos
 setInterval(() => {
-    ReactDOM.createRoot(document.getElementById('app')).render(<Home segundos={segundos} minutos={minutos} horas={horas}/>);
+    ReactDOM.createRoot(document.getElementById('app')).render(<Home decimasdesegundo={decimasdesegundo} segundos={segundos} minutos={minutos} horas={horas}/>);
 
-    // (decimasdesegundo == 99 ? segundos = 1: decimasdesegundo);
-    segundos ++
-
-    (segundos == 60 ? minutos++ : minutos);
-    (segundos == 60 ? segundos =0 : segundos);
-
-}, 1000);
-
-//minutos
-// setInterval(() => {
     
-//     minutos ++
-//     (minutos == 59 ? minutos = 0 : minutos)
-// }, 60000 );
+    decimasdesegundo ++
+
+    (decimasdesegundo == 100 ? segundos++ : segundos);
+    (decimasdesegundo == 100 ? decimasdesegundo =0 : decimasdesegundo);
+    (segundos == 60 ? minutos ++ :segundos);
+    (segundos == 60 ? segundos = 0 : segundos);
+    (minutos == 60 ? horas ++ : minutos);
+    (horas == 2 ? horas = 0 : horas);
+    
+    
+
+}, 10);
+
